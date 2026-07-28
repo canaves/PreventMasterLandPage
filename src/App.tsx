@@ -6,6 +6,7 @@ import Index from "./pages/Index";
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const routerBasename = import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
 
 const App = () => (
   <>
@@ -13,7 +14,7 @@ const App = () => (
       Pular para o conteúdo principal
     </a>
     <Toaster />
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename}>
       <Suspense fallback={<div className="sr-only" role="status">Carregando página</div>}>
         <Routes>
           <Route path="/" element={<Index />} />
