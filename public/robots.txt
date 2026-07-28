@@ -1,14 +1,5 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
+
+# TODO: Substituir pelo domínio oficial antes de publicar.
+Sitemap: https://www.seu-dominio.com.br/sitemap.xml

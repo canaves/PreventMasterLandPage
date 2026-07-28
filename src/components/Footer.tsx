@@ -1,79 +1,87 @@
-import { Shield, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
+import { company, whatsappUrl } from "@/lib/company";
+import preventMasterLogo from "@/assets/prevent-master-logo.png";
 
 const Footer = () => {
   const whatsappClick = () => {
-    const message = encodeURIComponent("Olá! Entrei em contato através do site da Prevent Master. Gostaria de mais informações!");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(
+      whatsappUrl("Olá! Entrei em contato através do site da Prevent Master. Gostaria de mais informações."),
+      "_blank",
+    );
   };
 
   const services = [
-    "Cerca Elétrica",
-    "Portão Eletrônico", 
-    "Câmeras de Segurança",
-    "Sistema de Alarme",
-    "Interfone Digital",
-    "Manutenção Preventiva"
+    "Cerca elétrica",
+    "Portão eletrônico",
+    "Câmeras de segurança",
+    "Sistema de alarme",
+    "Interfone e controle de acesso",
+    "Manutenção preventiva",
   ];
 
   const quickLinks = [
     { label: "Início", href: "#inicio" },
     { label: "Serviços", href: "#servicos" },
     { label: "Sobre", href: "#sobre" },
-    { label: "Depoimentos", href: "#depoimentos" },
-    { label: "Contato", href: "#contato" }
+    { label: "Processo", href: "#processo" },
+    { label: "Contato", href: "#contato" },
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer id="contato" className="bg-primary text-primary-foreground">
       <div className="container-padding">
-        {/* Main Footer Content */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
+        <div className="py-12 md:py-16 grid md:grid-cols-2 lg:grid-cols-[1.25fr_0.8fr_0.8fr_1fr] gap-8 lg:gap-10">
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="bg-accent p-2 rounded-lg">
-                <Shield className="h-6 w-6 text-accent-foreground" />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="rounded-lg bg-white p-2 shadow-sm">
+                <img src={preventMasterLogo} alt={company.name} className="h-14 w-auto" width="1200" height="605" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold">Prevent Master</h3>
-                <p className="text-sm text-primary-foreground/80">Segurança Premium</p>
+              <div className="min-w-0">
+                <h3 className="sr-only">{company.name}</h3>
+                <p className="text-sm text-primary-foreground/80">{company.tagline}</p>
               </div>
             </div>
-            
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-              Especialistas em segurança eletrônica há mais de 15 anos. 
-              Protegemos o que você tem de mais importante com tecnologia de ponta.
+
+            <p className="text-sm text-primary-foreground/80 mb-6 leading-relaxed">
+              Atendimento em segurança eletrônica com orçamento conforme necessidade, tipo de imóvel e escopo do
+              serviço.
             </p>
 
-            {/* Contact Info */}
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               <div className="flex items-center text-sm">
-                <Phone className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
-                <span>(11) 99999-9999</span>
+                <Phone aria-hidden="true" focusable="false" className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
+                <a href={`tel:+55${company.whatsappNumber.slice(2)}`} className="hover:text-accent transition-colors">
+                  {company.phoneDisplay}
+                </a>
               </div>
               <div className="flex items-center text-sm">
-                <Mail className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
-                <span>contato@preventmaster.com.br</span>
+                <Mail aria-hidden="true" focusable="false" className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
+                <a href={`mailto:${company.email}`} className="break-all hover:text-accent transition-colors">
+                  {company.email}
+                </a>
               </div>
               <div className="flex items-start text-sm">
-                <MapPin className="h-4 w-4 mr-3 text-accent flex-shrink-0 mt-0.5" />
-                <span>São Paulo, SP - Atendemos toda a Grande São Paulo</span>
+                <MapPin aria-hidden="true" focusable="false" className="h-4 w-4 mr-3 text-accent flex-shrink-0 mt-0.5" />
+                {/* TODO: Preencher endereço ou área de atendimento oficial da Prevent Master. */}
+                <span>Área de atendimento a confirmar</span>
               </div>
               <div className="flex items-center text-sm">
-                <Clock className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
-                <span>Seg - Sex: 8h às 18h | Emergências 24h</span>
+                <Clock aria-hidden="true" focusable="false" className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
+                {/* TODO: Preencher horário oficial de atendimento. */}
+                <span>Horário de atendimento a confirmar</span>
               </div>
             </div>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Nossos Serviços</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base font-semibold mb-5">Serviços</h4>
+            <ul className="space-y-2.5">
               {services.map((service) => (
                 <li key={service}>
                   <button
+                    type="button"
                     onClick={whatsappClick}
+                    aria-label={`Solicitar informações sobre ${service}`}
                     className="text-primary-foreground/80 hover:text-accent transition-colors duration-200 text-left"
                   >
                     {service}
@@ -83,10 +91,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Links Rápidos</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base font-semibold mb-5">Navegação</h4>
+            <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
@@ -97,82 +104,54 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="#"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors duration-200"
-                >
-                  Política de Privacidade
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-primary-foreground/80 hover:text-accent transition-colors duration-200"
-                >
-                  Termos de Uso
-                </a>
-              </li>
+              {/* TODO: Criar páginas oficiais de Política de Privacidade e Termos de Uso antes de publicar links. */}
             </ul>
           </div>
 
-          {/* CTA Section */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Fale Conosco</h4>
-            <div className="bg-primary-light p-6 rounded-xl mb-6">
-              <h5 className="font-semibold mb-2">Orçamento Grátis</h5>
+            <h4 className="text-base font-semibold mb-5">Fale conosco</h4>
+            <div className="bg-primary-light p-5 rounded-lg mb-6">
+              <h5 className="font-semibold mb-2">Orçamento personalizado</h5>
               <p className="text-sm text-primary-foreground/80 mb-4">
-                Receba uma proposta personalizada em até 2 horas!
+                Envie sua solicitação e informe qual serviço você procura.
               </p>
               <button
+                type="button"
                 onClick={whatsappClick}
+                aria-label="Chamar a Prevent Master no WhatsApp"
                 className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
               >
-                WhatsApp Direto
+                WhatsApp {company.phoneDisplay}
               </button>
             </div>
 
-            {/* Social Media */}
             <div>
-              <h5 className="font-semibold mb-4">Siga-nos</h5>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="bg-primary-light p-2 rounded-lg hover:bg-accent transition-colors duration-200"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-primary-light p-2 rounded-lg hover:bg-accent transition-colors duration-200"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-primary-light p-2 rounded-lg hover:bg-accent transition-colors duration-200"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
+              <h5 className="font-semibold mb-4">Redes sociais</h5>
+              {/* TODO: Preencher URLs oficiais de Facebook, Instagram e LinkedIn. */}
+              <p className="sr-only">Redes sociais pendentes de cadastro.</p>
+              <div className="flex space-x-4 opacity-60" aria-label="Redes sociais pendentes de cadastro">
+                <span className="bg-primary-light p-2 rounded-lg" aria-hidden="true">
+                  <Facebook aria-hidden="true" focusable="false" className="h-5 w-5" />
+                </span>
+                <span className="bg-primary-light p-2 rounded-lg" aria-hidden="true">
+                  <Instagram aria-hidden="true" focusable="false" className="h-5 w-5" />
+                </span>
+                <span className="bg-primary-light p-2 rounded-lg" aria-hidden="true">
+                  <Linkedin aria-hidden="true" focusable="false" className="h-5 w-5" />
+                </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-primary-light py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="text-sm text-primary-foreground/60 mb-4 md:mb-0">
-              © 2024 Prevent Master. Todos os direitos reservados.
+        <div className="border-t border-primary-light py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-sm text-primary-foreground/60">
+              © {new Date().getFullYear()} {company.name}. Todos os direitos reservados.
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm text-primary-foreground/60">
-              <span>CNPJ: 00.000.000/0001-00</span>
-              <span>•</span>
-              <span>Licença CREA: 000000</span>
+              <span>CNPJ: {company.cnpj}</span>
             </div>
           </div>
         </div>

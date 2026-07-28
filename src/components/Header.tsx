@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Menu, X, Shield, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { company, whatsappUrl } from "@/lib/company";
+import preventMasterLogo from "@/assets/prevent-master-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,88 +11,86 @@ const Header = () => {
     { label: "Início", href: "#inicio" },
     { label: "Serviços", href: "#servicos" },
     { label: "Sobre", href: "#sobre" },
-    { label: "Depoimentos", href: "#depoimentos" },
+    { label: "Processo", href: "#processo" },
     { label: "Contato", href: "#contato" },
   ];
 
   const whatsappClick = () => {
-    const message = encodeURIComponent("Olá! Gostaria de solicitar um orçamento para soluções de segurança da Prevent Master.");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(
+      whatsappUrl("Olá! Gostaria de solicitar um orçamento para soluções de segurança eletrônica da Prevent Master."),
+      "_blank",
+    );
   };
 
   return (
-    <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container-padding">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-gradient-primary p-2 rounded-lg">
-              <Shield className="h-6 w-6 text-primary-foreground" />
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <a href="#inicio" className="flex items-center gap-3 rounded-lg focus-visible:ring-offset-background">
+            <img
+              src={preventMasterLogo}
+              alt={company.name}
+              className="h-11 w-auto md:h-14"
+              width="1200"
+              height="605"
+            />
+            <div className="hidden sm:block">
+              <h1 className="sr-only">{company.name}</h1>
+              <p className="text-xs text-muted-foreground leading-tight">{company.tagline}</p>
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-primary">Prevent Master</h1>
-              <p className="text-xs text-muted-foreground">Segurança Premium</p>
-            </div>
-          </div>
+          </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-1 rounded-lg bg-secondary/70 p-1" aria-label="Navegação principal">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground hover:text-primary font-medium transition-colors duration-200 hover:scale-105"
+                className="rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-background hover:text-primary"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              onClick={whatsappClick}
-              className="btn-whatsapp"
-            >
-              <Phone className="h-4 w-4 mr-2" />
-              Orçamento Grátis
+            <Button onClick={whatsappClick} className="btn-whatsapp" aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba">
+              <Phone aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
+              Solicitar orçamento
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            type="button"
+            className="md:hidden rounded-lg p-2 hover:bg-secondary transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+              <X aria-hidden="true" focusable="false" className="h-6 w-6 text-foreground" />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu aria-hidden="true" focusable="false" className="h-6 w-6 text-foreground" />
             )}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <nav className="flex flex-col space-y-4">
+            <nav id="mobile-navigation" className="flex flex-col gap-2" aria-label="Navegação principal mobile">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-foreground hover:text-primary font-medium transition-colors duration-200 py-2"
+                  className="rounded-lg px-3 py-2 text-foreground hover:bg-secondary hover:text-primary font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <Button
-                onClick={whatsappClick}
-                className="btn-whatsapp mt-4"
-              >
-                <Phone className="h-4 w-4 mr-2" />
-                Orçamento Grátis
+              <Button onClick={whatsappClick} className="btn-whatsapp mt-4" aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba">
+                <Phone aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
+                Solicitar orçamento
               </Button>
             </nav>
           </div>
