@@ -5,7 +5,7 @@ import { company, whatsappUrl } from "@/lib/company";
 const AboutSection = () => {
   const whatsappClick = () => {
     window.open(
-      whatsappUrl("Olá! Gostaria de falar com a Prevent Master sobre uma instalação ou manutenção de segurança eletrônica."),
+      whatsappUrl("Olá! Gostaria de falar com a Prevent Master sobre uma instalação ou manutenção de proteção patrimonial."),
       "_blank",
       "noopener,noreferrer",
     );
@@ -35,7 +35,7 @@ const AboutSection = () => {
     {
       icon: Award,
       title: "Mais de 10 anos no mercado",
-      description: "Experiência acumulada em serviços de segurança eletrônica para diferentes tipos de imóveis.",
+      description: "Experiência acumulada em serviços de proteção patrimonial para diferentes tipos de imóveis.",
     },
     {
       icon: Shield,
@@ -61,12 +61,12 @@ const AboutSection = () => {
           </div>
 
           <h2 id="about-title" className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-4">
-            Segurança eletrônica
+            Proteção patrimonial
             <span className="text-primary block">com atendimento claro e responsável</span>
           </h2>
 
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
-            A Prevent Master atua com soluções de segurança eletrônica para quem precisa proteger imóveis, controlar
+            A Prevent Master atua com soluções de proteção patrimonial para quem precisa proteger imóveis, controlar
             acessos e manter equipamentos funcionando com orientação técnica e comunicação direta.
           </p>
         </div>

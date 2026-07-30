@@ -16,7 +16,7 @@ const WhatsAppFloat = () => {
   const whatsappClick = () => {
     window.open(
       whatsappUrl(
-        "Olá! Vi o site da Prevent Master e gostaria de tirar uma dúvida ou solicitar um orçamento de segurança eletrônica.",
+        "Olá! Vi o site da Prevent Master e gostaria de tirar uma dúvida ou solicitar um orçamento de proteção patrimonial.",
       ),
       "_blank",
       "noopener,noreferrer",

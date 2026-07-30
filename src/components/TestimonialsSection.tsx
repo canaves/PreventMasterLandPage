@@ -134,7 +134,7 @@ const TestimonialsSection = () => {
 
             <p className="text-primary-foreground/90 mb-6 text-base md:text-lg leading-relaxed">
               Fale pelo WhatsApp para solicitar orçamento, tirar dúvidas sobre instalação ou entender a contratação de
-              serviços de segurança eletrônica.
+              serviços de proteção patrimonial.
             </p>
 
             <Button

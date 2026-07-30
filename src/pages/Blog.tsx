@@ -47,7 +47,7 @@ const Blog = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h1 id="blog-title" className="text-4xl md:text-5xl font-bold text-white mb-6">Blog da Prevent Master</h1>
             <p className="text-xl text-white/90 mb-8">
-              Conteúdos informativos sobre segurança eletrônica, instalação e manutenção.
+              Conteúdos informativos sobre proteção patrimonial, instalação e manutenção.
             </p>
 
             <div className="relative max-w-md mx-auto">
@@ -183,7 +183,7 @@ const Blog = () => {
                       Fale conosco via WhatsApp para tirar dúvidas e solicitar um orçamento.
                     </p>
                     <a
-                      href={whatsappUrl("Olá! Vi o blog da Prevent Master e gostaria de tirar dúvidas sobre segurança eletrônica.")}
+                      href={whatsappUrl("Olá! Vi o blog da Prevent Master e gostaria de tirar dúvidas sobre proteção patrimonial.")}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Falar com a Prevent Master no WhatsApp, abre em nova aba"

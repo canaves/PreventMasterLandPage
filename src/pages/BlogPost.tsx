@@ -145,7 +145,7 @@ const BlogPost = () => {
 
             <Card className="bg-gradient-primary text-white mb-12">
               <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Precisa de ajuda com segurança eletrônica?</h3>
+                <h3 className="text-2xl font-bold mb-4">Precisa de ajuda com proteção patrimonial?</h3>
                 <p className="text-white/90 mb-6">
                   Envie sua dúvida pelo WhatsApp e informe qual serviço você procura.
                 </p>

@@ -17,7 +17,7 @@ const Header = () => {
 
   const whatsappClick = () => {
     window.open(
-      whatsappUrl("Olá! Gostaria de solicitar um orçamento para soluções de segurança eletrônica da Prevent Master."),
+      whatsappUrl("Olá! Gostaria de solicitar um orçamento para soluções de proteção patrimonial da Prevent Master."),
       "_blank",
       "noopener,noreferrer",
     );
@@ -31,9 +31,9 @@ const Header = () => {
             <img
               src={preventMasterLogo}
               alt={company.name}
-              className="h-11 w-auto md:h-14"
-              width="1200"
-              height="605"
+              className="h-12 w-auto md:h-16"
+              width="512"
+              height="512"
             />
             <div className="hidden sm:block">
               <h1 className="sr-only">{company.name}</h1>

@@ -40,7 +40,7 @@ const Footer = () => {
             </div>
 
             <p className="text-sm text-primary-foreground/80 mb-6 leading-relaxed">
-              Atendimento em segurança eletrônica com orçamento conforme necessidade, tipo de imóvel e escopo do
+              Atendimento em proteção patrimonial com orçamento conforme necessidade, tipo de imóvel e escopo do
               serviço.
             </p>
 

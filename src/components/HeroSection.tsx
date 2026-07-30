@@ -65,7 +65,7 @@ const HeroSection = () => {
 
   const whatsappClick = () => {
     window.open(
-      whatsappUrl("Olá! Vi o site da Prevent Master e gostaria de solicitar um orçamento para segurança eletrônica."),
+      whatsappUrl("Olá! Vi o site da Prevent Master e gostaria de solicitar um orçamento para proteção patrimonial."),
       "_blank",
       "noopener,noreferrer",
     );
@@ -98,12 +98,12 @@ const HeroSection = () => {
             <div className="space-y-5">
               <div className="inline-flex max-w-full items-center rounded-lg border border-white/10 bg-white/10 px-3 py-2 text-sm font-medium text-white/90 backdrop-blur-sm">
                 <Zap aria-hidden="true" focusable="false" className="mr-2 h-4 w-4 flex-shrink-0 text-accent" />
-                <span className="truncate">Segurança eletrônica residencial e empresarial</span>
+                <span className="truncate">Proteção patrimonial residencial e empresarial</span>
               </div>
 
               <div className="space-y-4">
                 <h1 id="hero-title" className="hero-title max-w-[12ch]">
-                  Segurança eletrônica
+                  Proteção patrimonial
                   <span className="block text-accent">com resposta rápida</span>
                 </h1>
 

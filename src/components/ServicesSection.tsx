@@ -134,7 +134,7 @@ const ServicesSection = () => {
             </p>
             <Button
               onClick={() =>
-                whatsappClick("Olá! Gostaria de contratar serviços de segurança eletrônica com a Prevent Master.")
+                whatsappClick("Olá! Gostaria de contratar serviços de proteção patrimonial com a Prevent Master.")
               }
               className="btn-cta text-lg px-8 py-4 group"
               aria-label="Contratar serviços da Prevent Master pelo WhatsApp, abre em nova aba"
