@@ -36,11 +36,11 @@ All colors MUST be HSL for perfect theming.
     --muted: 220 10% 96%;
     --muted-foreground: 220 10% 45%;
 
-    /* Accent - Action Orange */
-    --accent: 25 90% 55%;
+    /* Accent - Brand Steel Blue */
+    --accent: 212 29% 74%;
     --accent-foreground: 220 60% 15%;
-    --accent-light: 25 85% 65%;
-    --accent-dark: 25 95% 45%;
+    --accent-light: 207 100% 98%;
+    --accent-dark: 213 16% 46%;
 
     /* Success - Trust Green */
     --success: 140 65% 45%;
@@ -65,8 +65,8 @@ All colors MUST be HSL for perfect theming.
 
     /* Gradients - Premium Effects */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-dark)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-dark)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(218 28% 23%) 52%, hsl(var(--accent-dark)));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
 
     /* Shadows - Elegant Depth */
@@ -215,7 +215,9 @@ All colors MUST be HSL for perfect theming.
 
   /* WhatsApp Integration */
   .whatsapp-float {
-    @apply fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-1;
+    @apply fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 h-16 w-16 bg-transparent p-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2;
+    border: 0;
+    border-radius: 1.25rem;
   }
 
   .skip-link {

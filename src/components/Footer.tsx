@@ -1,13 +1,10 @@
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { company, whatsappUrl } from "@/lib/company";
 import preventMasterLogo from "@/assets/prevent-master-logo.png";
 
 const Footer = () => {
-  const whatsappClick = () => {
-    window.open(
-      whatsappUrl("Olá! Entrei em contato através do site da Prevent Master. Gostaria de mais informações."),
-      "_blank",
-    );
+  const whatsappClick = (message = "Olá! Entrei em contato através do site da Prevent Master. Gostaria de mais informações.") => {
+    window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
   };
 
   const services = [
@@ -62,13 +59,11 @@ const Footer = () => {
               </div>
               <div className="flex items-start text-sm">
                 <MapPin aria-hidden="true" focusable="false" className="h-4 w-4 mr-3 text-accent flex-shrink-0 mt-0.5" />
-                {/* TODO: Preencher endereço ou área de atendimento oficial da Prevent Master. */}
-                <span>Área de atendimento a confirmar</span>
+                <span>Atendimento regional: {company.serviceAreas.join(" • ")}</span>
               </div>
-              <div className="flex items-center text-sm">
-                <Clock aria-hidden="true" focusable="false" className="h-4 w-4 mr-3 text-accent flex-shrink-0" />
-                {/* TODO: Preencher horário oficial de atendimento. */}
-                <span>Horário de atendimento a confirmar</span>
+              <div className="flex items-start text-sm">
+                <Clock aria-hidden="true" focusable="false" className="h-4 w-4 mr-3 text-accent flex-shrink-0 mt-0.5" />
+                <span>{company.businessHours.join(" • ")}</span>
               </div>
             </div>
           </div>
@@ -80,7 +75,9 @@ const Footer = () => {
                 <li key={service}>
                   <button
                     type="button"
-                    onClick={whatsappClick}
+                    onClick={() =>
+                      whatsappClick(`Olá! Gostaria de solicitar informações sobre ${service} com a Prevent Master.`)
+                    }
                     aria-label={`Solicitar informações sobre ${service}`}
                     className="text-primary-foreground/80 hover:text-accent transition-colors duration-200 text-left"
                   >
@@ -111,13 +108,17 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-semibold mb-5">Fale conosco</h4>
             <div className="bg-primary-light p-5 rounded-lg mb-6">
-              <h5 className="font-semibold mb-2">Orçamento personalizado</h5>
+              <h5 className="font-semibold mb-2">Orçamento sem compromisso</h5>
               <p className="text-sm text-primary-foreground/80 mb-4">
-                Envie sua solicitação e informe qual serviço você procura.
+                Envie sua solicitação para orçamento, dúvidas sobre instalação ou contratação de serviços.
               </p>
               <button
                 type="button"
-                onClick={whatsappClick}
+                onClick={() =>
+                  whatsappClick(
+                    "Olá! Gostaria de solicitar um orçamento sem compromisso com a Prevent Master.",
+                  )
+                }
                 aria-label="Chamar a Prevent Master no WhatsApp"
                 className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold py-3 px-4 rounded-lg transition-colors duration-200"
               >

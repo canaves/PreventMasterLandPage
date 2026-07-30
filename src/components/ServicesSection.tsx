@@ -1,13 +1,10 @@
-import { Shield, Camera, Lock, Zap, Phone, Settings, ArrowRight } from "lucide-react";
+import { ArrowRight, Camera, Lock, Phone, Settings, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { whatsappUrl } from "@/lib/company";
 
 const ServicesSection = () => {
-  const whatsappClick = (service: string) => {
-    window.open(
-      whatsappUrl(`Olá! Tenho interesse no serviço de ${service} da Prevent Master. Gostaria de mais informações.`),
-      "_blank",
-    );
+  const whatsappClick = (message: string) => {
+    window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
   };
 
   const services = [
@@ -17,6 +14,7 @@ const ServicesSection = () => {
       description:
         "Soluções para proteção perimetral com avaliação do local, definição dos equipamentos adequados e instalação técnica.",
       features: ["Avaliação do perímetro", "Orientação sobre uso", "Instalação sob orçamento", "Manutenção quando necessária"],
+      cta: "Orçar cerca elétrica",
     },
     {
       icon: Lock,
@@ -24,6 +22,7 @@ const ServicesSection = () => {
       description:
         "Automação de portões residenciais, comerciais e condominiais conforme o tipo de abertura e a rotina de uso.",
       features: ["Escolha do motor adequado", "Configuração de controles", "Testes de funcionamento", "Orientação ao cliente"],
+      cta: "Orçar portão eletrônico",
     },
     {
       icon: Camera,
@@ -31,6 +30,7 @@ const ServicesSection = () => {
       description:
         "Projetos de monitoramento com posicionamento estratégico de câmeras e orientação para acesso às imagens.",
       features: ["Definição dos pontos", "Instalação organizada", "Configuração de acesso", "Ajustes de imagem"],
+      cta: "Orçar câmeras",
     },
     {
       icon: Shield,
@@ -38,6 +38,7 @@ const ServicesSection = () => {
       description:
         "Sistemas de detecção e aviso para reforçar a segurança de imóveis residenciais e comerciais.",
       features: ["Análise dos ambientes", "Configuração de sensores", "Teste de acionamento", "Treinamento de uso"],
+      cta: "Orçar sistema de alarme",
     },
     {
       icon: Phone,
@@ -45,6 +46,7 @@ const ServicesSection = () => {
       description:
         "Soluções para comunicação, identificação e controle de entrada em residências, empresas e condomínios.",
       features: ["Mapeamento dos acessos", "Instalação técnica", "Configuração do sistema", "Orientação operacional"],
+      cta: "Tirar dúvidas sobre acesso",
     },
     {
       icon: Settings,
@@ -52,6 +54,7 @@ const ServicesSection = () => {
       description:
         "Verificação de equipamentos instalados para reduzir falhas, corrigir ajustes e preservar o funcionamento do sistema.",
       features: ["Inspeção técnica", "Limpeza e ajustes", "Diagnóstico de falhas", "Recomendações de melhoria"],
+      cta: "Solicitar manutenção",
     },
   ];
 
@@ -99,18 +102,22 @@ const ServicesSection = () => {
                 <ul className="space-y-2.5 mb-6">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-success rounded-full mr-3 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-success rounded-full mr-3 mt-2 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
                 </ul>
 
                 <Button
-                  onClick={() => whatsappClick(service.title)}
+                  onClick={() =>
+                    whatsappClick(
+                      `Olá! Tenho interesse em ${service.title} com a Prevent Master. Gostaria de tirar dúvidas e solicitar orçamento.`,
+                    )
+                  }
                   className="mt-auto w-full bg-primary hover:bg-primary-light text-primary-foreground group"
-                  aria-label={`Solicitar orçamento de ${service.title} pelo WhatsApp, abre em nova aba`}
+                  aria-label={`${service.cta} pelo WhatsApp, abre em nova aba`}
                 >
-                  Solicitar orçamento
+                  {service.cta}
                   <ArrowRight aria-hidden="true" focusable="false" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -122,15 +129,17 @@ const ServicesSection = () => {
           <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-lg text-center">
             <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">Precisa combinar mais de uma solução?</h3>
             <p className="text-sm md:text-base leading-relaxed text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Envie uma mensagem descrevendo o imóvel e o que você deseja proteger. A equipe retorna com orientação
-              inicial e próximos passos para orçamento.
+              Envie uma mensagem descrevendo o imóvel e o que deseja proteger. A equipe retorna com orientação inicial
+              para orçamento e contratação do serviço.
             </p>
             <Button
-              onClick={() => whatsappClick("projeto personalizado")}
+              onClick={() =>
+                whatsappClick("Olá! Gostaria de contratar serviços de segurança eletrônica com a Prevent Master.")
+              }
               className="btn-cta text-lg px-8 py-4 group"
-              aria-label="Falar com a Prevent Master pelo WhatsApp, abre em nova aba"
+              aria-label="Contratar serviços da Prevent Master pelo WhatsApp, abre em nova aba"
             >
-              Falar com a Prevent Master
+              Contratar serviços
               <ArrowRight aria-hidden="true" focusable="false" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>

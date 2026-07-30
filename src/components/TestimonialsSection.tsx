@@ -1,4 +1,4 @@
-import { ClipboardCheck, MessageCircle, ShieldCheck, Wrench, ArrowRight } from "lucide-react";
+import { ArrowRight, ClipboardCheck, HelpCircle, MessageCircle, ShieldCheck, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { whatsappUrl } from "@/lib/company";
 
@@ -7,6 +7,7 @@ const TestimonialsSection = () => {
     window.open(
       whatsappUrl("Olá! Gostaria de entender o processo de atendimento da Prevent Master e solicitar um orçamento."),
       "_blank",
+      "noopener,noreferrer",
     );
   };
 
@@ -33,6 +34,38 @@ const TestimonialsSection = () => {
     },
   ];
 
+  const faqs = [
+    {
+      question: "Como solicito um orçamento?",
+      answer:
+        "Envie uma mensagem pelo WhatsApp informando o serviço desejado, tipo de imóvel e cidade de atendimento. A equipe orienta os próximos passos.",
+    },
+    {
+      question: "O orçamento tem compromisso?",
+      answer:
+        "Não. A solicitação inicial é sem compromisso e serve para entender a necessidade antes de avançar com a proposta.",
+    },
+    {
+      question: "A Prevent Master atende quais cidades?",
+      answer: "O atendimento informado contempla Londrina - PR, Cambé - PR e Rolândia - PR.",
+    },
+    {
+      question: "Quais serviços posso contratar?",
+      answer:
+        "Câmeras de segurança, alarmes, cerca elétrica, portão eletrônico, interfone, controle de acesso e manutenção preventiva.",
+    },
+    {
+      question: "A instalação tem garantia?",
+      answer:
+        "A empresa informou garantia de 1 ano sobre os materiais instalados. Demais condições devem ser confirmadas no orçamento.",
+    },
+    {
+      question: "Posso tirar dúvidas antes de contratar?",
+      answer:
+        "Sim. O WhatsApp pode ser usado para dúvidas sobre instalação, equipamentos, manutenção e contratação de serviços.",
+    },
+  ];
+
   return (
     <section id="processo" className="section-padding bg-background" aria-labelledby="process-title">
       <div className="container-padding">
@@ -44,12 +77,12 @@ const TestimonialsSection = () => {
 
           <h2 id="process-title" className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-4">
             Do primeiro contato
-            <span className="text-primary block">à instalação orientada</span>
+            <span className="text-primary block">à contratação do serviço</span>
           </h2>
 
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-            Em vez de pacotes prontos e valores genéricos, a Prevent Master trabalha com entendimento da necessidade,
-            definição do escopo e proposta conforme o ambiente.
+            O atendimento é conduzido por etapas simples para entender a necessidade, explicar o escopo e orientar a
+            contratação de forma objetiva.
           </p>
         </div>
 
@@ -73,14 +106,35 @@ const TestimonialsSection = () => {
           })}
         </div>
 
+        <div className="mb-14 md:mb-16 animate-fade-in" aria-labelledby="faq-title">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
+              <HelpCircle aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
+              Perguntas frequentes
+            </div>
+            <h3 id="faq-title" className="text-2xl md:text-3xl font-bold text-foreground">
+              Dúvidas comuns antes de contratar
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
+            {faqs.map((faq) => (
+              <article key={faq.question} className="rounded-lg border border-border bg-card p-6 shadow-sm">
+                <h4 className="text-lg font-semibold text-foreground mb-2">{faq.question}</h4>
+                <p className="text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
         {/* TODO: Adicionar depoimentos reais de clientes, com autorização de uso, quando estiverem disponíveis. */}
         <div className="bg-gradient-primary text-primary-foreground rounded-lg p-6 md:p-8 text-center shadow-primary animate-fade-in">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-xl md:text-2xl font-bold mb-4">Pronto para iniciar seu orçamento?</h3>
 
             <p className="text-primary-foreground/90 mb-6 text-base md:text-lg leading-relaxed">
-              Entre em contato pelo WhatsApp e informe qual solução você procura. A Prevent Master orienta os próximos
-              passos conforme a necessidade do seu imóvel.
+              Fale pelo WhatsApp para solicitar orçamento, tirar dúvidas sobre instalação ou entender a contratação de
+              serviços de segurança eletrônica.
             </p>
 
             <Button

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company, whatsappUrl } from "@/lib/company";
 import preventMasterLogo from "@/assets/prevent-master-logo.png";
@@ -19,6 +19,7 @@ const Header = () => {
     window.open(
       whatsappUrl("Olá! Gostaria de solicitar um orçamento para soluções de segurança eletrônica da Prevent Master."),
       "_blank",
+      "noopener,noreferrer",
     );
   };
 
@@ -36,7 +37,7 @@ const Header = () => {
             />
             <div className="hidden sm:block">
               <h1 className="sr-only">{company.name}</h1>
-              <p className="text-xs text-muted-foreground leading-tight">{company.tagline}</p>
+              <p className="max-w-[220px] text-xs text-muted-foreground leading-tight">{company.tagline}</p>
             </div>
           </a>
 
@@ -53,7 +54,11 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button onClick={whatsappClick} className="btn-whatsapp" aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba">
+            <Button
+              onClick={whatsappClick}
+              className="btn-whatsapp"
+              aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba"
+            >
               <Phone aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
               Solicitar orçamento
             </Button>
@@ -88,7 +93,11 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button onClick={whatsappClick} className="btn-whatsapp mt-4" aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba">
+              <Button
+                onClick={whatsappClick}
+                className="btn-whatsapp mt-4"
+                aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba"
+              >
                 <Phone aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
                 Solicitar orçamento
               </Button>
