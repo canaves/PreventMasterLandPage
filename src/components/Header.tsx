@@ -31,7 +31,7 @@ const Header = () => {
             <img
               src={preventMasterLogo}
               alt={company.name}
-              className="h-12 w-auto md:h-16"
+              className="h-24 w-auto md:h-28"
               width="512"
               height="512"
             />
