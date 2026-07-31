@@ -30,11 +30,20 @@ const Footer = () => {
       <div className="container-padding">
         <div className="grid gap-8 py-12 md:grid-cols-2 md:py-16 lg:grid-cols-[1.25fr_0.9fr_0.75fr_1fr] lg:gap-10">
           <div>
-            <div className="mb-6 flex items-center gap-4">
-              <div className="rounded-lg bg-white p-2 shadow-sm">
-                <img src={preventMasterLogo} alt={company.name} className="h-16 w-auto" width="512" height="512" />
+            <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex h-24 w-40 items-center justify-center rounded-lg border border-white/15 bg-white px-4 py-3 shadow-md shadow-primary-dark/20 sm:h-28 sm:w-44">
+                <img
+                  src={preventMasterLogo}
+                  alt={company.name}
+                  className="h-full w-full object-contain"
+                  width="512"
+                  height="512"
+                />
               </div>
-              <p className="text-sm leading-relaxed text-primary-foreground/80">{company.tagline}</p>
+              <div className="max-w-xs">
+                <p className="text-base font-semibold leading-snug text-primary-foreground">{company.name}</p>
+                <p className="mt-2 text-sm leading-relaxed text-primary-foreground/78">{company.tagline}</p>
+              </div>
             </div>
 
             <p className="mb-6 text-sm leading-relaxed text-primary-foreground/80">
