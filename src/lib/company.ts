@@ -1,6 +1,6 @@
 export const company = {
   name: "Prevent Master",
-  tagline: "Construindo confiança através da inovação em segurança.",
+  tagline: "Proteção patrimonial com orientação técnica e resposta rápida.",
   cnpj: "65.122.662/0001-80",
   phoneDisplay: "(43) 98841-4223",
   whatsappNumber: "5543988414223",

@@ -2,107 +2,103 @@ import { ArrowRight, Camera, Lock, Phone, Settings, Shield, Zap } from "lucide-r
 import { Button } from "@/components/ui/button";
 import { whatsappUrl } from "@/lib/company";
 
+const services = [
+  {
+    icon: Zap,
+    title: "Cerca elétrica",
+    description: "Proteção perimetral com avaliação do muro, definição dos equipamentos e orientação para uso seguro.",
+    features: ["Avaliação do perímetro", "Instalação técnica", "Orientação de uso"],
+    cta: "Orçar cerca elétrica",
+  },
+  {
+    icon: Shield,
+    title: "Concertina",
+    description: "Barreira física para muros e áreas expostas, com acabamento alinhado ao tipo de imóvel.",
+    features: ["Análise do acesso", "Aplicação sob medida", "Acabamento profissional"],
+    cta: "Orçar concertina",
+  },
+  {
+    icon: Camera,
+    title: "Câmeras de segurança",
+    description: "Monitoramento com posicionamento estratégico, ajustes de imagem e configuração de acesso.",
+    features: ["Definição dos pontos", "Configuração remota", "Ajustes de imagem"],
+    cta: "Orçar câmeras",
+  },
+  {
+    icon: Lock,
+    title: "Portão eletrônico",
+    description: "Automação para residências, empresas e condomínios conforme rotina de uso e tipo de abertura.",
+    features: ["Motor adequado", "Configuração de controles", "Testes de funcionamento"],
+    cta: "Orçar portão",
+  },
+  {
+    icon: Phone,
+    title: "Interfone e acesso",
+    description: "Comunicação e controle de entrada para imóveis que precisam organizar circulação e visitantes.",
+    features: ["Mapeamento dos acessos", "Instalação organizada", "Orientação operacional"],
+    cta: "Tirar dúvidas sobre acesso",
+  },
+  {
+    icon: Settings,
+    title: "Manutenção preventiva",
+    description: "Verificação de equipamentos instalados para reduzir falhas e preservar o funcionamento do sistema.",
+    features: ["Inspeção técnica", "Limpeza e ajustes", "Diagnóstico de falhas"],
+    cta: "Solicitar manutenção",
+  },
+];
+
 const ServicesSection = () => {
   const whatsappClick = (message: string) => {
     window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
   };
 
-  const services = [
-    {
-      icon: Zap,
-      title: "Cerca elétrica",
-      description:
-        "Soluções para proteção perimetral com avaliação do local, definição dos equipamentos adequados e instalação técnica.",
-      features: ["Avaliação do perímetro", "Orientação sobre uso", "Instalação sob orçamento", "Manutenção quando necessária"],
-      cta: "Orçar cerca elétrica",
-    },
-    {
-      icon: Lock,
-      title: "Portão eletrônico",
-      description:
-        "Automação de portões residenciais, comerciais e condominiais conforme o tipo de abertura e a rotina de uso.",
-      features: ["Escolha do motor adequado", "Configuração de controles", "Testes de funcionamento", "Orientação ao cliente"],
-      cta: "Orçar portão eletrônico",
-    },
-    {
-      icon: Camera,
-      title: "Câmeras de segurança",
-      description:
-        "Projetos de monitoramento com posicionamento estratégico de câmeras e orientação para acesso às imagens.",
-      features: ["Definição dos pontos", "Instalação organizada", "Configuração de acesso", "Ajustes de imagem"],
-      cta: "Orçar câmeras",
-    },
-    {
-      icon: Shield,
-      title: "Sistema de alarme",
-      description:
-        "Sistemas de detecção e aviso para reforçar a segurança de imóveis residenciais e comerciais.",
-      features: ["Análise dos ambientes", "Configuração de sensores", "Teste de acionamento", "Treinamento de uso"],
-      cta: "Orçar sistema de alarme",
-    },
-    {
-      icon: Phone,
-      title: "Interfone e controle de acesso",
-      description:
-        "Soluções para comunicação, identificação e controle de entrada em residências, empresas e condomínios.",
-      features: ["Mapeamento dos acessos", "Instalação técnica", "Configuração do sistema", "Orientação operacional"],
-      cta: "Tirar dúvidas sobre acesso",
-    },
-    {
-      icon: Settings,
-      title: "Manutenção preventiva",
-      description:
-        "Verificação de equipamentos instalados para reduzir falhas, corrigir ajustes e preservar o funcionamento do sistema.",
-      features: ["Inspeção técnica", "Limpeza e ajustes", "Diagnóstico de falhas", "Recomendações de melhoria"],
-      cta: "Solicitar manutenção",
-    },
-  ];
-
   return (
     <section id="servicos" className="section-padding bg-gradient-subtle" aria-labelledby="services-title">
       <div className="container-padding">
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
-          <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            <Shield aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
-            Serviços
+        <div className="mb-10 grid gap-6 md:mb-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div className="animate-fade-in">
+            <div className="section-kicker">
+              <Shield aria-hidden="true" focusable="false" className="mr-2 h-4 w-4" />
+              Serviços oferecidos
+            </div>
+
+            <h2 id="services-title" className="mt-4 text-3xl font-bold leading-tight text-foreground md:text-4xl">
+              Soluções para proteger
+              <span className="block text-primary">o perímetro, os acessos e a rotina</span>
+            </h2>
           </div>
 
-          <h2 id="services-title" className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-4">
-            Soluções de segurança
-            <span className="text-primary block">dimensionadas para cada imóvel</span>
-          </h2>
-
-          <p className="text-base md:text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-            Cada atendimento começa pela necessidade real do cliente. A proposta é montada conforme o ambiente, os
-            equipamentos indicados e o tipo de instalação.
+          <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg lg:justify-self-end">
+            A proposta é montada conforme o ambiente, o nível de exposição e o tipo de instalação. O foco é indicar o
+            necessário com clareza, sem pacote pronto empurrado para todo imóvel.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div
+              <article
                 key={service.title}
-                className="service-card animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="service-card group animate-fade-in"
+                style={{ animationDelay: `${index * 0.06}s` }}
               >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="bg-gradient-primary p-3 rounded-lg shadow-primary">
+                <div className="mb-5 flex items-start gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-primary shadow-primary">
                     <IconComponent aria-hidden="true" focusable="false" className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="text-lg md:text-xl font-semibold leading-tight text-foreground">{service.title}</h3>
+                    <h3 className="text-lg font-semibold leading-tight text-foreground md:text-xl">{service.title}</h3>
                     <p className="mt-1 text-sm font-semibold text-accent-dark">Sob orçamento</p>
                   </div>
                 </div>
 
-                <p className="text-sm leading-relaxed text-muted-foreground mb-6">{service.description}</p>
+                <p className="mb-5 text-sm leading-relaxed text-muted-foreground">{service.description}</p>
 
-                <ul className="space-y-2.5 mb-6">
+                <ul className="mb-6 space-y-2.5">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-success rounded-full mr-3 mt-2 flex-shrink-0" />
+                      <span className="mr-3 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-success" />
                       {feature}
                     </li>
                   ))}
@@ -114,35 +110,35 @@ const ServicesSection = () => {
                       `Olá! Tenho interesse em ${service.title} com a Prevent Master. Gostaria de tirar dúvidas e solicitar orçamento.`,
                     )
                   }
-                  className="mt-auto w-full bg-primary hover:bg-primary-light text-primary-foreground group"
+                  className="mt-auto w-full bg-primary text-primary-foreground hover:bg-primary-light group"
                   aria-label={`${service.cta} pelo WhatsApp, abre em nova aba`}
                 >
                   {service.cta}
-                  <ArrowRight aria-hidden="true" focusable="false" className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight aria-hidden="true" focusable="false" className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-              </div>
+              </article>
             );
           })}
         </div>
 
-        <div className="mt-12 md:mt-16 animate-fade-in">
-          <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-lg text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">Precisa combinar mais de uma solução?</h3>
-            <p className="text-sm md:text-base leading-relaxed text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Envie uma mensagem descrevendo o imóvel e o que deseja proteger. A equipe retorna com orientação inicial
-              para orçamento e contratação do serviço.
+        <div className="mt-12 grid gap-5 rounded-lg border border-border bg-card p-6 shadow-lg md:grid-cols-[1fr_auto] md:items-center md:p-8">
+          <div>
+            <h3 className="text-xl font-bold text-foreground md:text-2xl">Não sabe qual solução combina com o imóvel?</h3>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              Envie uma mensagem com cidade, tipo de imóvel e o que deseja proteger. A equipe orienta o melhor caminho
+              para orçamento.
             </p>
-            <Button
-              onClick={() =>
-                whatsappClick("Olá! Gostaria de contratar serviços de proteção patrimonial com a Prevent Master.")
-              }
-              className="btn-cta text-lg px-8 py-4 group"
-              aria-label="Contratar serviços da Prevent Master pelo WhatsApp, abre em nova aba"
-            >
-              Contratar serviços
-              <ArrowRight aria-hidden="true" focusable="false" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
+          <Button
+            onClick={() =>
+              whatsappClick("Olá! Gostaria de uma orientação para escolher uma solução de proteção patrimonial.")
+            }
+            className="btn-cta w-full px-7 py-4 text-base group md:w-auto"
+            aria-label="Solicitar orientação pelo WhatsApp, abre em nova aba"
+          >
+            Receber orientação
+            <ArrowRight aria-hidden="true" focusable="false" className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </Button>
         </div>
       </div>
     </section>

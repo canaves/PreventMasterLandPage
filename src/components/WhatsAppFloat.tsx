@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import whatsappIcon from "@/assets/whatsapp-icon.png";
 import { whatsappUrl } from "@/lib/company";
 

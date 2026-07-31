@@ -4,69 +4,71 @@ import { Button } from "@/components/ui/button";
 import { company, whatsappUrl } from "@/lib/company";
 import preventMasterLogo from "@/assets/prevent-master-logo.png";
 
+const menuItems = [
+  { label: "Início", href: "#inicio" },
+  { label: "Soluções", href: "#solucoes" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Diferenciais", href: "#sobre" },
+  { label: "Experiência", href: "#experiencia" },
+  { label: "FAQ", href: "#processo" },
+  { label: "Contato", href: "#contato" },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    { label: "Início", href: "#inicio" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Processo", href: "#processo" },
-    { label: "Contato", href: "#contato" },
-  ];
-
   const whatsappClick = () => {
     window.open(
-      whatsappUrl("Olá! Gostaria de solicitar um orçamento para soluções de proteção patrimonial da Prevent Master."),
+      whatsappUrl("Olá! Gostaria de solicitar um orçamento para proteção patrimonial da Prevent Master."),
       "_blank",
       "noopener,noreferrer",
     );
   };
 
   return (
-    <header className="bg-background/95 backdrop-blur-md border-b border-border sticky top-0 z-50 shadow-sm">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/[0.92] shadow-sm backdrop-blur-md">
       <div className="container-padding">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#inicio" className="flex items-center gap-3 rounded-lg focus-visible:ring-offset-background">
+        <div className="flex min-h-20 items-center justify-between gap-4">
+          <a href="#inicio" className="flex min-w-0 items-center gap-3 rounded-lg focus-visible:ring-offset-background">
             <img
               src={preventMasterLogo}
               alt={company.name}
-              className="h-24 w-auto md:h-28"
+              className="h-20 w-auto sm:h-30"
               width="512"
               height="512"
             />
-            <div className="hidden sm:block">
+            <div className="hidden min-w-0 lg:block">
               <h1 className="sr-only">{company.name}</h1>
-              <p className="max-w-[220px] text-xs text-muted-foreground leading-tight">{company.tagline}</p>
+              <p className="max-w-[260px] text-xs leading-tight text-muted-foreground">{company.tagline}</p>
             </div>
           </a>
 
-          <nav className="hidden md:flex items-center gap-1 rounded-lg bg-secondary/70 p-1" aria-label="Navegação principal">
+          <nav className="hidden items-center gap-1 rounded-lg border border-border bg-secondary/70 p-1 lg:flex" aria-label="Navegação principal">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-background hover:text-primary"
+                className="rounded-md px-3 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-background hover:text-primary focus-visible:ring-offset-secondary"
               >
                 {item.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden items-center gap-3 md:flex">
             <Button
               onClick={whatsappClick}
               className="btn-whatsapp"
               aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba"
             >
-              <Phone aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
-              Solicitar orçamento
+              <Phone aria-hidden="true" focusable="false" className="mr-2 h-4 w-4" />
+              WhatsApp
             </Button>
           </div>
 
           <button
             type="button"
-            className="md:hidden rounded-lg p-2 hover:bg-secondary transition-colors"
+            className="rounded-lg border border-border p-2 transition-colors hover:bg-secondary lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isMenuOpen}
@@ -81,13 +83,13 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="border-t border-border py-4 lg:hidden animate-fade-in">
             <nav id="mobile-navigation" className="flex flex-col gap-2" aria-label="Navegação principal mobile">
               {menuItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="rounded-lg px-3 py-2 text-foreground hover:bg-secondary hover:text-primary font-medium transition-colors duration-200"
+                  className="rounded-lg px-3 py-3 font-medium text-foreground transition-colors duration-200 hover:bg-secondary hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -95,10 +97,10 @@ const Header = () => {
               ))}
               <Button
                 onClick={whatsappClick}
-                className="btn-whatsapp mt-4"
+                className="btn-whatsapp mt-3 w-full"
                 aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba"
               >
-                <Phone aria-hidden="true" focusable="false" className="h-4 w-4 mr-2" />
+                <Phone aria-hidden="true" focusable="false" className="mr-2 h-4 w-4" />
                 Solicitar orçamento
               </Button>
             </nav>
