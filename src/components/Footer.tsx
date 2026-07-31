@@ -1,6 +1,6 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { company, whatsappUrl } from "@/lib/company";
-import preventMasterLogo from "@/assets/prevent-master-logo.png";
+import preventMasterFooterLogo from "@/assets/prevent-master-footer-logo.png";
 
 const services = [
   "Cerca elétrica",
@@ -31,13 +31,13 @@ const Footer = () => {
         <div className="grid gap-8 py-12 md:grid-cols-2 md:py-16 lg:grid-cols-[1.25fr_0.9fr_0.75fr_1fr] lg:gap-10">
           <div>
             <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <div className="flex h-24 w-40 items-center justify-center rounded-lg border border-white/15 bg-white px-4 py-3 shadow-md shadow-primary-dark/20 sm:h-28 sm:w-44">
+              <div className="flex h-28 w-56 items-center justify-center rounded-lg border border-white/15 bg-white px-5 py-4 shadow-md shadow-primary-dark/20 sm:h-32 sm:w-64">
                 <img
-                  src={preventMasterLogo}
+                  src={preventMasterFooterLogo}
                   alt={company.name}
                   className="h-full w-full object-contain"
-                  width="512"
-                  height="512"
+                  width="715"
+                  height="572"
                 />
               </div>
               <div className="max-w-xs">
