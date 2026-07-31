@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: process.env.GITHUB_PAGES === "true" ? "/master-lead-pro/" : "/",
+  base: process.env.GITHUB_PAGES === "true" ? "/PreventMasterLandPage/" : "/",
   server: {
     host: "::",
     port: 8080,
