@@ -44,7 +44,6 @@ const brandAssurances = ["Equipamentos originais", "Recursos certificados"];
 const scheduleItems = [
   { days: "Segunda a sexta-feira", hours: "8h às 18h" },
   { days: "Sábado", hours: "8h às 12h" },
-  { days: "Domingos e feriados", hours: "Fechado" },
 ];
 
 const TrustSection = () => {

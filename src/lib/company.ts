@@ -9,7 +9,6 @@ export const company = {
   businessHours: [
     "Segunda a sexta-feira: das 8h às 18h",
     "Sábado: das 8h às 12h",
-    "Domingo e feriados: fechado",
   ],
 };
 
