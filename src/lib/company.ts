@@ -6,6 +6,8 @@ export const company = {
   whatsappNumber: "5543988414223",
   email: "preventmaster.adm@gmail.com",
   serviceAreas: ["Londrina - PR", "Cambé - PR", "Rolândia - PR"],
+  serviceRegionText:
+    "Atendemos Londrina e região (Cambé, Rolândia e cidades próximas) na região Norte do Paraná. Consulte disponibilidade para outras localidades.",
   businessHours: [
     "Segunda a sexta-feira: das 8h às 18h",
     "Sábado: das 8h às 12h",

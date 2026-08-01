@@ -127,13 +127,7 @@ const TrustSection = () => {
                   <MapPin aria-hidden="true" focusable="false" className="h-4 w-4" />
                   Regiões atendidas
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {company.serviceAreas.map((area) => (
-                    <span key={area} className="rounded-md border border-border bg-background px-3 py-2 text-sm font-semibold text-foreground">
-                      {area}
-                    </span>
-                  ))}
-                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">{company.serviceRegionText}</p>
               </div>
 
               <div className="rounded-lg border border-border bg-background p-4">

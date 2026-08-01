@@ -25,7 +25,7 @@ const FinalCTASection = () => {
                 Quer proteger seu imóvel com uma equipe experiente?
               </h2>
               <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary-foreground/90">
-                Fale com a Prevent Master pelo WhatsApp. Atendimento em {company.serviceAreas.join(", ")}.
+                Fale com a Prevent Master pelo WhatsApp. {company.serviceRegionText}
               </p>
             </div>
 

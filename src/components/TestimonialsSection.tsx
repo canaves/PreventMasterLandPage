@@ -35,7 +35,8 @@ const faqs = [
   },
   {
     question: "A Prevent Master atende quais cidades?",
-    answer: "O atendimento informado contempla Londrina - PR, Cambé - PR e Rolândia - PR.",
+    answer:
+      "Atendemos Londrina e região, incluindo Cambé, Rolândia e cidades próximas no Norte do Paraná. Consulte disponibilidade para outras localidades.",
   },
   {
     question: "Quais serviços posso contratar?",

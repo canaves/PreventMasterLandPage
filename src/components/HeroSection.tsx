@@ -250,7 +250,7 @@ const HeroSection = () => {
 
             <div className="mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-white/[0.12] bg-white/[0.08] px-4 py-3 text-sm text-white/[0.82] backdrop-blur-sm">
               <MapPin aria-hidden="true" focusable="false" className="h-4 w-4 flex-shrink-0 text-accent" />
-              Atendimento em {company.serviceAreas.join(", ")}
+              {company.serviceRegionText}
             </div>
           </div>
         </div>

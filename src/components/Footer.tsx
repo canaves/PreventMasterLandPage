@@ -40,7 +40,7 @@ const Footer = () => {
                 <MapPin aria-hidden="true" focusable="false" className="h-4 w-4 text-accent" />
                 Atendimento regional
               </div>
-              <p className="text-sm leading-relaxed text-primary-foreground/75">{company.serviceAreas.join(" • ")}</p>
+              <p className="text-sm leading-relaxed text-primary-foreground/75">{company.serviceRegionText}</p>
             </div>
             <div className="rounded-lg border border-white/10 bg-white/[0.05] p-4">
               <div className="mb-2 flex items-center gap-2 text-sm font-semibold">
