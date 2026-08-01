@@ -102,7 +102,7 @@ const HeroSection = () => {
             <div className="space-y-5">
               <div className="inline-flex max-w-full items-center rounded-lg border border-white/[0.14] bg-white/10 px-3 py-2 text-sm font-semibold text-white/90 backdrop-blur-sm">
                 <Zap aria-hidden="true" focusable="false" className="mr-2 h-4 w-4 flex-shrink-0 text-accent" />
-                <span className="truncate">Proteção patrimonial em Londrina e região</span>
+                <span className="truncate">Segurança especializada em Londrina e região</span>
               </div>
 
               <div className="space-y-4">
