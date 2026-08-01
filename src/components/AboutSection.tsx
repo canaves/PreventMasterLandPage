@@ -64,7 +64,7 @@ const AboutSection = () => {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[0.86fr_1.14fr] lg:gap-8">
-          <div className="rounded-lg bg-gradient-primary p-6 text-primary-foreground shadow-primary md:p-8">
+          <div className="rounded-lg bg-gradient-primary p-6 text-primary-foreground shadow-primary md:p-8 lg:self-start">
             <div className="mb-5 flex items-center gap-3">
               <Wrench aria-hidden="true" focusable="false" className="h-7 w-7 text-accent" />
               <h3 className="text-2xl font-bold leading-tight">Diagnóstico antes da indicação</h3>
