@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 py-5">
+        <div className="border-t border-white/10 pb-24 pt-5 md:py-5">
           <div className="flex flex-col items-center justify-between gap-4 text-sm text-primary-foreground/60 md:flex-row">
             <div>© {new Date().getFullYear()} {company.name}. Todos os direitos reservados.</div>
             <div>CNPJ: {company.cnpj}</div>

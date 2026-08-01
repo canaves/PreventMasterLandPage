@@ -7,6 +7,7 @@ import heroSecurity from "@/assets/hero-security.jpg";
 const showcaseCards = [
   {
     image: heroRazorTunnel,
+    alt: "Concertina instalada em formato circular protegendo passagem externa",
     icon: Fence,
     title: "Barreira perimetral",
     text: "Concertinas e cercas elétricas reforçam pontos vulneráveis antes que o acesso ao imóvel aconteça.",
@@ -14,6 +15,7 @@ const showcaseCards = [
   },
   {
     image: heroSecurity,
+    alt: "Técnico ajustando equipamento de segurança eletrônica em muro",
     icon: Camera,
     title: "Monitoramento e acesso",
     text: "Câmeras, interfones e controles ajudam a acompanhar movimentações e organizar entradas.",
@@ -21,6 +23,7 @@ const showcaseCards = [
   },
   {
     image: heroInstallation,
+    alt: "Instalação técnica de cerca elétrica em muro residencial",
     icon: Wrench,
     title: "Instalação técnica",
     text: "A execução correta evita falhas, melhora o acabamento e facilita o uso do sistema no dia a dia.",
@@ -79,7 +82,7 @@ const EquipmentShowcaseSection = () => {
             return (
               <article key={card.title} className="overflow-hidden rounded-lg border border-white/12 bg-white/[0.07] shadow-xl">
                 <div className="relative aspect-[4/3] overflow-hidden bg-primary-dark">
-                  <img src={card.image} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  <img src={card.image} alt={card.alt} className="h-full w-full object-cover" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/78 via-primary-dark/10 to-transparent" />
                   <span className="absolute left-4 top-4 rounded-lg border border-white/15 bg-primary-dark/72 px-3 py-2 text-xs font-semibold text-white backdrop-blur-sm">
                     {card.label}
@@ -120,7 +123,12 @@ const EquipmentShowcaseSection = () => {
         <div className="mt-5 overflow-hidden rounded-lg border border-white/12 bg-white/[0.06]">
           <div className="grid gap-0 lg:grid-cols-[0.78fr_1.22fr]">
             <div className="relative min-h-[260px]">
-              <img src={heroRazorWall} alt="" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <img
+                src={heroRazorWall}
+                alt="Concertina instalada sobre muro para reforço perimetral"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
               <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/75 to-primary-dark/10" />
             </div>
             <div className="p-6 md:p-8">

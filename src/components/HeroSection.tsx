@@ -43,7 +43,7 @@ const benefits = [
 
 const proofPoints = [
   ["10+", "anos no mercado"],
-  ["3", "cidades atendidas"],
+  ["Região", "Norte do Paraná"],
   ["1 ano", "garantia nos materiais"],
 ];
 
@@ -97,7 +97,7 @@ const HeroSection = () => {
       <div className="perimeter-grid absolute inset-0 opacity-45" aria-hidden="true" />
 
       <div className="container-padding relative">
-        <div className="grid min-h-[calc(100svh-5rem)] gap-9 py-10 md:py-14 lg:min-h-[720px] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-12">
+        <div className="grid min-h-[calc(100svh-4rem)] gap-8 py-8 md:min-h-[calc(100svh-5rem)] md:py-14 lg:min-h-[720px] lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-12">
           <div className="max-w-2xl space-y-6 self-center animate-fade-in md:space-y-7">
             <div className="space-y-5">
               <div className="inline-flex max-w-full items-center rounded-lg border border-white/[0.14] bg-white/10 px-3 py-2 text-sm font-semibold text-white/90 backdrop-blur-sm">
@@ -121,7 +121,7 @@ const HeroSection = () => {
             <div className="flex flex-col gap-3 pt-1 sm:flex-row">
               <Button
                 onClick={whatsappClick}
-                className="btn-cta min-h-[54px] px-7 py-4 text-base group md:text-lg"
+                className="btn-cta min-h-[54px] w-full px-7 py-4 text-base group sm:w-auto md:text-lg"
                 aria-label="Solicitar orçamento pelo WhatsApp, abre em nova aba"
               >
                 Solicitar orçamento
@@ -130,7 +130,7 @@ const HeroSection = () => {
 
               <Button
                 variant="outline"
-                className="min-h-[54px] border-white/30 bg-white/[0.03] px-6 py-4 text-white hover:bg-white/10"
+                className="min-h-[54px] w-full border-white/30 bg-white/[0.03] px-6 py-4 text-white hover:bg-white/10 sm:w-auto"
                 onClick={whatsappClick}
                 aria-label="Falar com a Prevent Master pelo WhatsApp, abre em nova aba"
               >
@@ -172,7 +172,7 @@ const HeroSection = () => {
               aria-roledescription="carrossel"
               aria-label="Projetos e instalações da Prevent Master"
             >
-              <div className="relative min-h-[390px] overflow-hidden rounded-lg bg-primary-dark sm:min-h-[470px] lg:min-h-[590px]">
+              <div className="relative min-h-[360px] overflow-hidden rounded-lg bg-primary-dark sm:min-h-[470px] lg:min-h-[590px]">
                 {heroSlides.map((slide, slideIndex) => (
                   <img
                     key={slide.title}

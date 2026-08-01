@@ -28,12 +28,12 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/[0.92] shadow-sm backdrop-blur-md">
       <div className="container-padding">
-        <div className="flex min-h-20 items-center justify-between gap-4">
+        <div className="flex min-h-16 items-center justify-between gap-4 py-2 md:min-h-20 md:py-0">
           <a href="#inicio" className="flex min-w-0 items-center gap-3 rounded-lg focus-visible:ring-offset-background">
             <img
               src={preventMasterLogo}
               alt={company.name}
-              className="h-20 w-auto sm:h-30"
+              className="h-14 w-auto md:h-20"
               width="512"
               height="512"
             />

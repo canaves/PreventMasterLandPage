@@ -148,7 +148,7 @@ All colors MUST be HSL for perfect theming.
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply overflow-x-hidden bg-background text-foreground font-sans antialiased;
   }
 
   html {
@@ -231,9 +231,10 @@ All colors MUST be HSL for perfect theming.
 
   /* WhatsApp Integration */
   .whatsapp-float {
-    @apply fixed bottom-5 right-5 md:bottom-6 md:right-6 z-50 h-14 w-14 bg-transparent p-0 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 md:h-16 md:w-16;
+    @apply fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 h-14 w-14 bg-transparent p-0 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2 md:h-16 md:w-16;
     border: 0;
     border-radius: 1.25rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 
   .skip-link {
